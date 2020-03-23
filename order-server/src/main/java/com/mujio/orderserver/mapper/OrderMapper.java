@@ -1,7 +1,7 @@
-package com.mujio.mall.mapper;
+package com.mujio.orderserver.mapper;
 
 
-import com.mujio.mall.entity.Order;
+import com.mujio.orderserver.entity.Order;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

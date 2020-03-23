@@ -1,4 +1,4 @@
-package com.mujio.mall.mapper;
+package com.mujio.orderserver.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
