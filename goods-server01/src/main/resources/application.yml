@@ -1,0 +1,27 @@
+server:
+  port: 8001
+
+
+spring:
+  #数据库连接配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mall?characterEncoding=utf8&useUnicode=true&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123
+  application:
+    #指定服务名称
+    name: goods-server
+
+eureka:
+  client:
+    #是否注册到Eureka服务中,这里是客户端需要向eureka注册
+    register-with-eureka: true
+    #是否从Eureka服务中获取注册信息
+    fetch-registry: false
+    service-url:
+      #Eureka客户端与服务端进行交互的地址,这里端口直接写成eureka服务的端口
+      defaultZone: http://mujio:123456@localhost:7000/eureka/
+  instance:
+    #把ip地址注册到Eureka服务中
+    prefer-ip-address: true

@@ -1,26 +1,24 @@
-package com.mujio.goodsserver.controller;
+package com.mujio.orderserver.controller;
 
 
-import com.mujio.goodsserver.entity.Goods;
-import com.mujio.goodsserver.service.GoodService;
+import com.mujio.orderserver.entity.Order;
+import com.mujio.orderserver.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/goods")
+@RequestMapping("/order")
 @RestController
-public class GoodsController {
+public class OrderController {
 
     @Autowired
-    private GoodService goodService;
+    private OrderService orderService;
 
     @RequestMapping("/{id}")
     @ResponseBody
-    public Goods getGoods(@PathVariable("id") int id){
-        System.out.println("goods-server");
-        return goodService.getGoods(id);
+    public Order getOrder(@PathVariable("id") int id) {
+        return orderService.getOrder(id);
     }
-
 }

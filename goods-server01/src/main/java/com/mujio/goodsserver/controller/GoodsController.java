@@ -19,7 +19,7 @@ public class GoodsController {
     @RequestMapping("/{id}")
     @ResponseBody
     public Goods getGoods(@PathVariable("id") int id){
-        System.out.println("goods-server");
+        System.out.println("goods-server01");
         return goodService.getGoods(id);
     }
 
