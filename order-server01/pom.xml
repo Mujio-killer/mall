@@ -21,6 +21,32 @@
     </properties>
 
     <dependencies>
+        <!--  Feign所需依赖 start -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--  根据spring cloud的版本选择，早期的使用下面的依赖 -->
+        <!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>-->
+        <!--  Feign所需依赖 end -->
+
+        <!--  熔断所需依赖 start -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+            <version>1.4.0.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+        </dependency>
+        <!--  熔断所需依赖 end -->
+
+
         <!-- 添加web服务依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

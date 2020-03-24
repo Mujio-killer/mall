@@ -1,5 +1,5 @@
 server:
-  port: 7000
+  port: 7002
 
 spring:
   application:
@@ -18,4 +18,4 @@ eureka:
     fetch-registry: true
     service-url:
       #Eureka客户端与服务端进行交互的地址,加入认证信息---修改为用","隔开的两个eureka地址
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:7001/eureka/,http://${spring.security.user.name}:${spring.security.user.password}@localhost:7002/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:7000/eureka/,http://${spring.security.user.name}:${spring.security.user.password}@localhost:7001/eureka/

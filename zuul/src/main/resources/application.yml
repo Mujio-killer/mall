@@ -1,0 +1,30 @@
+server:
+  port: 7100
+
+spring:
+  application:
+    #指定服务名称
+    name: zuul-server
+
+eureka:
+  client:
+    #是否注册到Eureka服务中
+    register-with-eureka: true
+    #是否从Eureka服务中获取注册信息
+    fetch-registry: true
+    service-url:
+      #Eureka客户端与服务端进行交互的地址
+      defaultZone: http://mujio:123456@localhost:7000/eureka/
+  instance:
+    #把ip地址注册到Eureka服务中
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+
+
+zuul:
+  routes:
+    goods-server:
+      # 将所有/goods/的路径映射到goods-server上
+      path: /goods/**
+      serviceId: goods-server
+      strip-prefix: false
