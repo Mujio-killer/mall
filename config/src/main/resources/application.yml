@@ -1,0 +1,23 @@
+server:
+  port: 9400
+
+eureka:
+  client:
+    #是否注册到Eureka服务中
+    register-with-eureka: true
+    #是否从Eureka服务中获取注册信息
+    fetch-registry: false
+    #Eureka客户端与服务端进行交互的地址
+    service-url:
+      defaultZone: http://mujio:123456@localhost:7000/eureka/
+    #健康检查（需要spring-boot-starter-actuator依赖）
+    healthcheck:
+      enabled: true
+
+  instance:
+    #把ip地址注册到Eureka服务中
+    prefer-ip-address: true
+    # 续约更新时间间隔（默认30秒）
+    lease-renewal-interval-in-seconds: 10
+    # 续约到期时间（默认90秒）
+    lease-expiration-duration-in-seconds: 10

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: goods-server
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: goods-server
+      profile: dev
+      uri: http://localhost:9400/
+      enabled: true
+
+eureka:
+  client:
+    register-with-eureka: true #是否注册到Eureka服务中
+    fetch-registry: true #是否从Eureka服务中获取注册信息
+    service-url: #Eureka客户端与服务端进行交互的地址
+      defaultZone: http://mujio:123456@localhost:7000/eureka/
+  instance:
+    prefer-ip-address: true #把ip地址注册到Eureka服务中
+    ip-address: 127.0.0.1

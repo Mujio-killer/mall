@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: config-server #配置服务名称
+  profiles:
+    active: native #设置为本地启动的方式，而不是通过git
+  cloud:
+    config:
+      server:
+        native:
+          # 配置文件所在目录，classpath（类路径）和（系统文件路径） file两种
+          searchLocations: classpath:/
